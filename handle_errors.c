@@ -12,6 +12,7 @@ void handle_errors(const unsigned int error_num, ...)
 	char *opcode_error;
 	char *file_name;
 	unsigned int line_number;
+
 	va_list(ap);
 
 	va_start(ap, error_num);
@@ -28,8 +29,7 @@ void handle_errors(const unsigned int error_num, ...)
 		case 3:
 			line_number = va_arg(ap, unsigned int);
 			opcode_error = va_arg(ap, char *);
-			fprintf(stderr, "L%u: unknown instruction
-				       	%s\n", line_number, opcode_error)
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode_error)
 			break;
 		case 4:
 			fprintf(stderr, "Error: malloc failed\n");
