@@ -23,20 +23,19 @@ void handle_errors(const unsigned int error_num, ...)
 			break;
 		case 2:
 			file_name = va_arg(ap, char *);
-			fprintf(stderr, "Error: Can't open file %s\n"
-					, file_name);
+			fprintf(stderr, "Error: Can't open file %s\n", file_name);
 			break;
 		case 3:
 			line_number = va_arg(ap, unsigned int);
 			opcode_error = va_arg(ap, char *);
-			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode_error)
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode_error);
 			break;
 		case 4:
 			fprintf(stderr, "Error: malloc failed\n");
 			break;
 		case 5:
 			line_number = va_arg(ap, unsigned int);
-			fprintf(stderr, "L%u: usage: push", line_number);
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			break;
 		default:
 			break;

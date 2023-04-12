@@ -1,0 +1,22 @@
+{
+    "C_Cpp.vcFormat.indent.preserveComments": true,
+    "editor.formatOnType": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "C_Cpp.clang_format_fallbackStyle": "clang_format",
+    "C_Cpp.vcFormat.indent.caseContents": false,
+    "C_Cpp.vcFormat.space.afterCastCloseParenthesis": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.insertSpaces": false,
+    "C_Cpp.clang_format_style": "Visual code",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.inactiveRegionOpacity": 0.55,
+    "window.zoomLevel": -1,
+    "editor.indentSize": "tabSize",
+    "cmake.configureOnOpen": true,
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "files.associations": {
+        "stdlib.h": "c"
+    }
+}
