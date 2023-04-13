@@ -94,7 +94,7 @@ void pall(stack_t **stack, unsigned int lineNum)
 	(void)(lineNum);
 
 	if (*stack == NULL)
-		exit(EXIT_FAILURE);
+		exit(0);
 	temp = *stack;
 	while (temp != NULL)
 	{
