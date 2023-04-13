@@ -34,6 +34,7 @@ int interpretLine(char *line, unsigned int lineNum)
 {
 	char *cmdToken, *argToken;
 	int argument;
+	int ifInt;
 	unsigned int line_num = lineNum;
 
 	cmdToken = strtok(line, " ");
@@ -42,16 +43,44 @@ int interpretLine(char *line, unsigned int lineNum)
 		argToken = strtok(NULL, " ");
 		if (argToken != NULL)
 		{
-			if (isdigit(*argToken) != 0)
+			if (ifisdigit(argToken) != 0)
+			{
 				argument = atoi(argToken);
+				ifInt = 1;
+			}
+			else if (argToken[0] == '-')
+			{
+				argToken[0] = '0';
+				if (ifisdigit(argToken) != 0)
+				{
+					argument = atoi(argToken) * -1;
+					ifInt = 1;
+				}
+				else
+					ifInt = -1;
+			}
 			else
-				argument = -1;
+				ifInt = -1;
 		}
 		else
-			argument = -1;
-		findFunc(cmdToken, argument, line_num);
+			ifInt = -1;
+		findFunc(cmdToken, argument, ifInt, line_num);
 		return (0);
 	}
 	else
 		return (0);
+}
+
+int ifisdigit(char *string)
+{
+	size_t i;
+
+	for (i = 0; i < strlen(string); i++)
+	{
+		if (isdigit(string[i]))
+			;
+		else
+			return (0);
+	}
+	return (1);
 }

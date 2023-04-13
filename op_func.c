@@ -14,7 +14,7 @@ int add_data(int data)
 * findFunc - find right func for opcodes
 *
 */
-void findFunc(char *cmdTok, int argument, unsigned int lineNum)
+void findFunc(char *cmdTok, int argument, int ifInt, unsigned int lineNum)
 {
 	int i;
 	stack_t *new_top = NULL;
@@ -30,7 +30,7 @@ void findFunc(char *cmdTok, int argument, unsigned int lineNum)
 		{
 			if (i == 0)
 			{
-				if (argument < 0)
+				if (ifInt < 0)
 					handle_errors(5, lineNum);
 				new_top = alloc_mem();
 				functions[i].f(&new_top, lineNum);

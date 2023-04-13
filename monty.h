@@ -41,7 +41,7 @@ typedef struct instruction_s
 extern stack_t *head;
 
 /*Stack and Queue Opcodes Function*/
-void findFunc(char *, int, unsigned int);
+void findFunc(char *, int, int, unsigned int);
 void push(stack_t **, unsigned int);
 void pall(stack_t **, unsigned int);
 int add_data(int data);
@@ -52,7 +52,7 @@ void handle_errors(const unsigned int error_num, ...);
 /*File Handlers*/
 int open_readfile(char **);
 int interpretLine(char *, unsigned int);
-
+int ifisdigit(char *);
 
 /*Memory Allocations*/
 stack_t *alloc_mem();
