@@ -40,5 +40,6 @@ void handle_errors(const unsigned int error_num, ...)
 		default:
 			break;
 	}
+	free_mem();
 	exit(EXIT_FAILURE);
 }

@@ -55,8 +55,8 @@ int interpretLine(char *, unsigned int);
 
 
 /*Memory Allocations*/
-stack_t *alloc_mem(stack_t *node);
-void free_mem(void);
+stack_t *alloc_mem();
+void free_mem();
 
 
 #endif /*MONTY_H*/

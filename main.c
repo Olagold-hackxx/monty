@@ -6,9 +6,13 @@ stack_t *head = NULL;
 */
 int main(int argc, char **argv)
 {
-	if (argc != 2)
+	if (argc == 2)
+	{
+		open_readfile(argv);
+		free_mem();
+	}
+	else
 		handle_errors(1);
-	open_readfile(argv);
-	free_mem();
+
 	return (0);
 }

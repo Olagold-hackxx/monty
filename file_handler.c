@@ -14,7 +14,7 @@ int open_readfile(char **argv)
 
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
-		handle_errors(2, *argv);
+		handle_errors(2, argv[1]);
 	line = (char *)malloc(sizeof(char) * lineLength);
 	if (line == NULL)
 		handle_errors(4);
@@ -25,6 +25,7 @@ int open_readfile(char **argv)
 		if (strlen(line) > 0)
 			interpretLine(line, lineNum);
 	}
+	free(line);
 	fclose(fp);
 	return (0);
 }

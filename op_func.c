@@ -17,7 +17,7 @@ int add_data(int data)
 void findFunc(char *cmdTok, int argument, unsigned int lineNum)
 {
 	int i;
-	stack_t *new_top;
+	stack_t *new_top = NULL;
 	instruction_t functions[] = {
 		{"push", push},
 		{"pall", pall},
@@ -32,7 +32,7 @@ void findFunc(char *cmdTok, int argument, unsigned int lineNum)
 			{
 				if (argument < 0)
 					handle_errors(5, lineNum);
-				new_top = alloc_mem(new_top);
+				new_top = alloc_mem();
 				functions[i].f(&new_top, lineNum);
 				add_data(argument);
 				return;
@@ -53,6 +53,8 @@ void findFunc(char *cmdTok, int argument, unsigned int lineNum)
 void push(stack_t **top, unsigned int lineNum)
 {
 	(void)(lineNum);
+	if (!top || !*top)
+		exit(EXIT_FAILURE);
 	if (head == NULL)
 	{
 		head = *top;
