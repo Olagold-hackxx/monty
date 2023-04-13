@@ -25,7 +25,6 @@ int add_data(int data)
 */
 void findFunc(char *cmdTok, int argument, int ifInt, unsigned int lineNum)
 {
-	stack_t *head = NULL;
 	int i;
 	stack_t *new_top = NULL;
 	instruction_t functions[] = {
