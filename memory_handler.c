@@ -1,13 +1,14 @@
 #include "monty.h"
 
 /**
-*
-*
+* alloc_mem - allocate memory
+* Return: pointer to allocated memory
 */
 
 stack_t *alloc_mem()
 {
 	stack_t *node;
+
 	node = malloc(sizeof(stack_t));
 
 	if (node == NULL)
@@ -19,14 +20,14 @@ stack_t *alloc_mem()
 }
 
 /**
-*
-*
+* free_mem - free memory
+* Return: pointer to allocated memory
 */
 
-void free_mem()
+void free_mem(void)
 {
 	stack_t *temp;
-	
+
 	if (head == NULL)
 		return;
 	while (head != NULL)

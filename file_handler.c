@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
-* open_file - open file
-* @argv: 1st cmd argument
-* Return: 
+* open_readfile - open file
+* @argv: 1st cmd line argument
+* Return: 0 on success
 */
 
 int open_readfile(char **argv)
@@ -18,7 +18,7 @@ int open_readfile(char **argv)
 	line = (char *)malloc(sizeof(char) * lineLength);
 	if (line == NULL)
 		handle_errors(4);
-	while(fgets(line, lineLength, fp))
+	while (fgets(line, lineLength, fp))
 	{
 		lineNum++;
 		line[strcspn(line, "\n")] = '\0';
@@ -29,6 +29,13 @@ int open_readfile(char **argv)
 	fclose(fp);
 	return (0);
 }
+
+/**
+* interpretLine - interpret line to find opcodes
+* @line: line read
+* @lineNum: line number
+* Return: 0 on success
+*/
 
 int interpretLine(char *line, unsigned int lineNum)
 {
@@ -70,6 +77,12 @@ int interpretLine(char *line, unsigned int lineNum)
 	else
 		return (0);
 }
+
+/**
+* ifisdigit - check if string is digit
+* @string: string to check
+* Return: 1 on success 0 if not digit
+*/
 
 int ifisdigit(char *string)
 {

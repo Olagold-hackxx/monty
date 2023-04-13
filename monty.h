@@ -56,7 +56,7 @@ int ifisdigit(char *);
 
 /*Memory Allocations*/
 stack_t *alloc_mem();
-void free_mem();
+void free_mem(void);
 
 
 #endif /*MONTY_H*/
