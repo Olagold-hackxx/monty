@@ -115,24 +115,3 @@ void pint(stack_t **top, unsigned int lineNum)
 		handle_errors(6, lineNum);
 	printf("%d\n", (*top)->n);
 }
-
-/**
-* pop - print the value at top of stack
-* @top: ptr to stack struct
-* @lineNum: line number in monty file
-*/
-
-void pop(stack_t **top, unsigned int lineNum)
-{
-	stack_t *tmp;
-
-	if (*top == NULL || top == NULL)
-		handle_errors(7, lineNum);
-
-	tmp = *top;
-	*top = tmp->next;
-	if (*top != NULL)
-		(*top)->prev = NULL;
-	head = *top;
-	free(tmp);
-}

@@ -50,6 +50,7 @@ void pop(stack_t **, unsigned int);
 
 /*Errors Handlers*/
 void handle_errors(const unsigned int error_num, ...);
+void handle_other_errors(const unsigned int error_num, ...);
 
 /*File Handlers*/
 int open_readfile(char **);

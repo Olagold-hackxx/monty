@@ -41,7 +41,30 @@ void handle_errors(const unsigned int error_num, ...)
 			line_number = va_arg(ap, unsigned int);
 			fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 			break;
-		case 7:
+		default:
+			break;
+	}
+	free_mem();
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * handle_other_errors - handle other errors while using monty
+ * @error_num: error number
+ *
+ * Description: Handles all errors that occurs
+ * when intepreting monty bytecode file(.m extension)
+ */
+void handle_other_errors(const unsigned int error_num, ...)
+{
+	unsigned int line_number;
+
+	va_list(ap);
+
+	va_start(ap, error_num);
+	switch (error_num)
+	{
+		case 1:
 			line_number = va_arg(ap, unsigned int);
 			fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 			break;
