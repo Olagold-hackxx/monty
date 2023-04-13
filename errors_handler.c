@@ -37,6 +37,14 @@ void handle_errors(const unsigned int error_num, ...)
 			line_number = va_arg(ap, unsigned int);
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			break;
+		case 6:
+			line_number = va_arg(ap, unsigned int);
+			fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+			break;
+		case 7:
+			line_number = va_arg(ap, unsigned int);
+			fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+			break;
 		default:
 			break;
 	}

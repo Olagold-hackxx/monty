@@ -30,6 +30,8 @@ void findFunc(char *cmdTok, int argument, int ifInt, unsigned int lineNum)
 	instruction_t functions[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 
@@ -54,8 +56,8 @@ void findFunc(char *cmdTok, int argument, int ifInt, unsigned int lineNum)
 }
 
 /**
-* push - insert to the top - LIFO, Stack
-* @top: stack data structure
+* push - insert to the top of stack
+* @top: ptr to stack struct
 * @lineNum: line number in monty file
 */
 
@@ -91,7 +93,7 @@ void pall(stack_t **stack, unsigned int lineNum)
 	stack_t *temp;
 	(void)(lineNum);
 
-	if (stack == NULL)
+	if (*stack == NULL)
 		exit(EXIT_FAILURE);
 	temp = *stack;
 	while (temp != NULL)
@@ -99,4 +101,38 @@ void pall(stack_t **stack, unsigned int lineNum)
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
+}
+
+/**
+* pint - print the value at top of stack
+* @top: ptr to stack struct
+* @lineNum: line number in monty file
+*/
+
+void pint(stack_t **top, unsigned int lineNum)
+{
+	if (*top == NULL)
+		handle_errors(6, lineNum);
+	printf("%d\n", (*top)->n);
+}
+
+/**
+* pop - print the value at top of stack
+* @top: ptr to stack struct
+* @lineNum: line number in monty file
+*/
+
+void pop(stack_t **top, unsigned int lineNum)
+{
+	stack_t *tmp;
+
+	if (*top == NULL || top == NULL)
+		handle_errors(7, lineNum);
+
+	tmp = *top;
+	*top = tmp->next;
+	if (*top != NULL)
+		(*top)->prev = NULL;
+	head = *top;
+	free(tmp);
 }
