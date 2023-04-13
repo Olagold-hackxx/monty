@@ -8,7 +8,7 @@
 
 int open_readfile(char **argv)
 {
-	unsigned int lineNum = 0, lineLength = 50;
+	unsigned int lineNum = 0, lineLength = 150;
 	FILE *fp;
 	char *line;
 
