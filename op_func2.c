@@ -49,7 +49,7 @@ void swap(stack_t **top, unsigned int lineNum)
 }
 
 /**
-* add - swap the two value at top of stack
+* add - add the two value at top of stack and replace with result
 * @top: ptr to stack struct
 * @lineNum: line number in monty file
 */
@@ -71,4 +71,16 @@ void add(stack_t **top, unsigned int lineNum)
 	}
 	else
 		handle_other_errors(3, lineNum);
+}
+
+/**
+* nop - do nothing
+* @top: ptr to stack struct
+* @lineNum: line number in monty file
+*/
+
+void nop(stack_t **top, unsigned int lineNum)
+{
+	(void)(lineNum);
+	(void)(top);
 }
