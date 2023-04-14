@@ -1,5 +1,6 @@
 #include "monty.h"
 stack_t *head = NULL;
+int format = 0;
 
 /**
 * main - main function

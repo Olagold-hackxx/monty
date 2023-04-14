@@ -12,7 +12,14 @@ int add_data(int data)
 	stack_t *tmp;
 
 	tmp = head;
-	tmp->n = data;
+	if (format == 0)
+		tmp->n = data;
+	else
+	{
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->n = data;
+	}
 	return (0);
 }
 
@@ -43,6 +50,8 @@ void findFunc(char *cmdTok, int argument, int ifInt, unsigned int lineNum)
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"stack", stack},
+		{"queue", queue},
 		{NULL, NULL}
 	};
 
@@ -55,7 +64,10 @@ void findFunc(char *cmdTok, int argument, int ifInt, unsigned int lineNum)
 				if (ifInt < 0)
 					handle_errors(5, lineNum);
 				new_top = alloc_mem();
-				functions[i].f(&new_top, lineNum);
+				if (format == 0)
+					functions[i].f(&new_top, lineNum);
+				else
+					push2queue(&new_top, lineNum);
 				add_data(argument);
 				return;
 			}

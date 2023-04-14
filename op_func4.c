@@ -60,5 +60,56 @@ void rotr(stack_t **top, unsigned int lineNum)
 		tmp2->next = tmp;
 		*top = tmp2;
 	}
-	
+}
+
+/**
+* stack - set type of data struct to stack
+* @top: ptr to top of stack struct
+* @lineNum: line number in monty file
+*/
+void stack(stack_t **top, unsigned int lineNum)
+{
+	(void)top;
+	(void)lineNum;
+	format = 0;
+}
+
+/**
+* queue - set type of data struct to stack
+* @top: ptr to top of queue struct
+* @lineNum: line number in monty file
+*/
+void queue(stack_t **top, unsigned int lineNum)
+{
+	(void)top;
+	(void)lineNum;
+	format = 1;
+}
+
+/**
+* push2queue - insert to the top of queue
+* @top: ptr to top of queue struct
+* @lineNum: line number in monty file
+*/
+void push2queue(stack_t **top, unsigned int lineNum)
+{
+	stack_t *tmp;
+	(void)(lineNum);
+
+	if (!top || !*top)
+		exit(EXIT_FAILURE);
+	if (head == NULL)
+	{
+		head = *top;
+		return;
+	}
+	else
+	{
+		tmp = head;
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = *top;
+		(*top)->next = NULL;
+		(*top)->prev = tmp;
+	}
 }

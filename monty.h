@@ -39,6 +39,7 @@ typedef struct instruction_s
 } instruction_t;
 
 extern stack_t *head;
+extern int format;
 
 /*Stack and Queue Opcodes Function*/
 void findFunc(char *, int, int, unsigned int);
@@ -58,7 +59,9 @@ void pchar(stack_t **, unsigned int);
 void pstr(stack_t **, unsigned int);
 void rotl(stack_t **, unsigned int);
 void rotr(stack_t **, unsigned int);
-
+void stack(stack_t **, unsigned int);
+void queue(stack_t **, unsigned int);
+void push2queue(stack_t **, unsigned int);
 
 /*Errors Handlers*/
 void handle_errors(const unsigned int error_num, ...);
