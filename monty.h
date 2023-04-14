@@ -48,6 +48,7 @@ int add_data(int data);
 void pint(stack_t **, unsigned int);
 void pop(stack_t **, unsigned int);
 void swap(stack_t **, unsigned int);
+void add(stack_t **, unsigned int);
 
 
 /*Errors Handlers*/
