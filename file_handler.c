@@ -48,7 +48,7 @@ int interpretLine(char *line, unsigned int lineNum)
 	if (cmdToken != NULL)
 	{
 		if (cmdToken[0] == '#')
-				return (0);
+			return (0);
 		argToken = strtok(NULL, " ");
 		if (argToken != NULL)
 		{

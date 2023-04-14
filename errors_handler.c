@@ -119,6 +119,14 @@ void handle_other_errors2(const unsigned int error_num, ...)
 			line_number = va_arg(ap, unsigned int);
 			fprintf(stderr, "L%u: division by zero\n", line_number);
 			break;
+		case 3:
+			line_number = va_arg(ap, unsigned int);
+			fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+			break;
+		case 4:
+			line_number = va_arg(ap, unsigned int);
+			fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+			break;
 		default:
 			break;
 	}

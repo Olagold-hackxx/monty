@@ -2,7 +2,7 @@
 #include "monty.h"
 
 /**
-* div - divide the two value at top of stack and replace with result
+* divd - divide the two value at top of stack and replace with result
 * @top: ptr to stack struct
 * @lineNum: line number in monty file
 */
@@ -79,4 +79,19 @@ void mod(stack_t **top, unsigned int lineNum)
 	}
 	else
 		handle_other_errors2(1, lineNum);
+}
+
+/**
+* pchar - print the ascii value of int at top of stack
+* @top: ptr to stack struct
+* @lineNum: line number in monty file
+*/
+
+void pchar(stack_t **top, unsigned int lineNum)
+{
+	if (*top == NULL)
+		handle_other_errors2(4, lineNum);
+	if ((*top)->n > 128 || (*top)->n < 0)
+		handle_other_errors2(3, lineNum);
+	printf("%c\n", (*top)->n);
 }
