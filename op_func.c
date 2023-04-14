@@ -35,6 +35,10 @@ void findFunc(char *cmdTok, int argument, int ifInt, unsigned int lineNum)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
+		{"div", divd},
+		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 

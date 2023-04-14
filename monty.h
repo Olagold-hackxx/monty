@@ -50,11 +50,17 @@ void pop(stack_t **, unsigned int);
 void swap(stack_t **, unsigned int);
 void add(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
+void sub(stack_t **, unsigned int);
+void divd(stack_t **, unsigned int);
+void mul(stack_t **, unsigned int);
+void mod(stack_t **, unsigned int);
 
 
 /*Errors Handlers*/
 void handle_errors(const unsigned int error_num, ...);
 void handle_other_errors(const unsigned int error_num, ...);
+void handle_other_errors2(const unsigned int error_num, ...);
+
 
 /*File Handlers*/
 int open_readfile(char **);
