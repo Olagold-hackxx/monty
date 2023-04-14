@@ -40,6 +40,8 @@ void findFunc(char *cmdTok, int argument, int ifInt, unsigned int lineNum)
 		{"mul", mul},
 		{"mod", mod},
 		{"pchar", pchar},
+		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 

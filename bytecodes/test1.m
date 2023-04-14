@@ -1,8 +1,13 @@
 push 1
 push 2
-push 24
 push 3
-mul
-#
+push 4
+push 5
+push 6
+push 7
+push 8
+push 9
+push 0
 pall
-pchar
+rotl
+pall

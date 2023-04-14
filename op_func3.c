@@ -95,3 +95,24 @@ void pchar(stack_t **top, unsigned int lineNum)
 		handle_other_errors2(3, lineNum);
 	printf("%c\n", (*top)->n);
 }
+
+/**
+* pstr - print the ascii value of int in the stack
+* @stack: ptr to stack struct
+* @lineNum: line number in monty file
+*/
+void pstr(stack_t **stack, unsigned int lineNum)
+{
+	stack_t *temp;
+	(void)(lineNum);
+
+	temp = *stack;
+	while (temp != NULL)
+	{
+		if (temp->n >= 128 || temp->n <= 0)
+			break;
+		printf("%c", temp->n);
+		temp = temp->next;
+	}
+	printf("\n");
+}
