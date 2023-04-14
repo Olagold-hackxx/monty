@@ -60,7 +60,7 @@ void add(stack_t **top, unsigned int lineNum)
 	stack_t *tmp2;
 
 	if (*top == NULL || top == NULL)
-		handle_other_errors(2, lineNum);
+		handle_other_errors(3, lineNum);
 
 	tmp1 = *top;
 	tmp2 = (*top)->next;
