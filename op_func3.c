@@ -91,7 +91,7 @@ void pchar(stack_t **top, unsigned int lineNum)
 {
 	if (*top == NULL)
 		handle_other_errors2(4, lineNum);
-	if ((*top)->n > 128 || (*top)->n < 0)
+	if ((*top)->n >= 128 || (*top)->n <= 0)
 		handle_other_errors2(3, lineNum);
 	printf("%c\n", (*top)->n);
 }
