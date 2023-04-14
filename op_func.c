@@ -42,6 +42,7 @@ void findFunc(char *cmdTok, int argument, int ifInt, unsigned int lineNum)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 
